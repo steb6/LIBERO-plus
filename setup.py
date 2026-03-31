@@ -1,11 +1,11 @@
 # read the contents of your README file
 from os import path
 
-from setuptools import find_packages, setup
+from setuptools import find_namespace_packages, setup
 
 setup(
     name="libero",
-    packages=[package for package in find_packages() if package.startswith("libero")],
+    packages=find_namespace_packages(include=["libero*"]),
     install_requires=[],
     eager_resources=["*"],
     include_package_data=True,
